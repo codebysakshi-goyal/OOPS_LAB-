@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+class Counter {
+private:
+    int count;
+
+public:    
+    Counter(int initial_value) {
+        count = initial_value;
+    }
+    void operator ++ () {
+        count = count + 1;
+    }
+    void display() {
+        cout << "Count: " << count << endl;
+    }
+};
+
+int main() {
+    int userInput;
+    cout << "Enter the initial value for the counter: ";
+    cin >> userInput;
+    Counter c(userInput);
+
+    cout << "\nBefore applying ++ operator:" << endl;
+    c.display();
+    ++c;
+
+    cout << "\nAfter applying ++ operator:" << endl;
+    c.display();
+
+    return 0;
+}
